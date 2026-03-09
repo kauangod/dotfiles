@@ -75,3 +75,8 @@ export PYTHONPATH=$SPARK_HOME/python:$PYTHONPATH
 export PYTHONPATH=$SPARK_HOME/python/lib/py4j-0.10.9.9-src.zip:$PYTHONPATH
 export JAVA_HOME=/usr/lib/jvm/java-17-openjdk/
 export PATH=$JAVE_HOME/bin:$PATH
+export PATH="$PATH:$HOME/.local/share/omarchy/bin"
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
