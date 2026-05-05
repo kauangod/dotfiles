@@ -8,6 +8,7 @@ add_newline = false
 
 format = """
 ➜\
+$hostname\
 $directory\
 ${custom.giturl}\
 $git_branch\
@@ -38,6 +39,12 @@ truncation_length = 4
 "Pictures" = " "
 "Developer" = "󰲋 "
 "Others" = " "
+
+[hostname]
+ssh_only = false
+trim_at = "."
+format = " [$hostname]($style) "
+style = "bold fg:peach"
 
 [username]
 disabled = true
