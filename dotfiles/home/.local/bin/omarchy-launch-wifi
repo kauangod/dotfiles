@@ -1,0 +1,33 @@
+#!/bin/bash
+
+rfkill unblock wifi
+
+# Remove duplicate Wi-Fi profiles that differ only by trailing spaces.
+while IFS= read -r uuid; do
+  [[ -n "$uuid" ]] && nmcli connection delete uuid "$uuid" >/dev/null
+done < <(
+  nmcli -t -f NAME,UUID,TYPE connection show | awk -F: '
+    $3 == "802-11-wireless" {
+      name=$1; uuid=$2
+      trimmed=name
+      sub(/[[:space:]]+$/, "", trimmed)
+
+      if (name == trimmed) {
+        exact[trimmed]=1
+      } else {
+        dupes[trimmed]=dupes[trimmed] " " uuid
+      }
+    }
+    END {
+      for (base in dupes) {
+        if (exact[base]) {
+          n=split(dupes[base], arr, " ")
+          for (i=1; i<=n; i++) if (arr[i] != "") print arr[i]
+        }
+      }
+    }
+  '
+)
+
+exec omarchy-launch-or-focus "org.omarchy.impala" \
+  "uwsm-app -- xdg-terminal-exec --app-id=org.omarchy.impala -e omarchy-nmtui-themed"

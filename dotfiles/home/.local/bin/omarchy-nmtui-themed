@@ -1,0 +1,37 @@
+#!/bin/bash
+
+# Themed nmtui colors aligned with Omarchy's dark look.
+export NEWT_COLORS='
+  root=lightgray,black
+  roottext=lightgray,black
+  window=lightgray,black
+  border=brightblue,black
+  shadow=black,black
+  title=brightcyan,black
+  button=black,lightgray
+  actbutton=black,brightcyan
+  compactbutton=lightgray,black
+  checkbox=lightgray,black
+  actcheckbox=brightcyan,black
+  entry=lightgray,black
+  disentry=gray,black
+  label=lightgray,black
+  listbox=lightgray,black
+  actlistbox=black,brightblue
+  sellistbox=black,lightgray
+  actsellistbox=black,brightcyan
+  textbox=lightgray,black
+  acttextbox=lightgray,black
+  helpline=black,lightgray
+  emptyscale=gray,black
+  fullscale=brightcyan,black
+'
+
+export NMT_NEWT_COLORS='
+  badLabel=brightred,black
+  plainLabel=lightgray,black
+  disabledButton=gray,black
+  textboxWithBackground=lightgray,black
+'
+
+exec nmtui
