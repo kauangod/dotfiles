@@ -8,7 +8,7 @@ add_newline = false
 
 format = """
 ➜\
-${custom.machine}\
+$hostname\
 $directory\
 ${custom.giturl}\
 $git_branch\
@@ -40,12 +40,11 @@ truncation_length = 4
 "Developer" = "󰲋 "
 "Others" = " "
 
-[custom.machine]
-description = "Short machine name"
-command = "echo $MACHINE_NAME"
-when = "test -n \"$MACHINE_NAME\""
-format = "[$output]($style) "
-style = "bold fg:peach"
+[hostname]
+ssh_only = false
+format = "[$hostname]($style) "
+style = "bold fg:yellow"
+trim_at = "."
 
 [username]
 disabled = true
