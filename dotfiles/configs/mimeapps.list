@@ -56,6 +56,9 @@ application/xml=nvim.desktop
 text/xml=nvim.desktop
 x-scheme-handler/aether=aether-protocol-handler.desktop
 inode/directory=org.gnome.Nautilus.desktop
+x-scheme-handler/claude-cli=claude-code-url-handler.desktop
+application/x-zerosize=typora.desktop
+x-scheme-handler/jetbrains=jetbrainsd.desktop
 
 [Added Associations]
 application/json=cursor-cursor.desktop;
@@ -69,3 +72,5 @@ application/x-extension-shtml=firefox.desktop;
 application/xhtml+xml=firefox.desktop;
 application/x-extension-xhtml=firefox.desktop;
 application/x-extension-xht=firefox.desktop;
+application/pdf=firefox-developer-edition.desktop;
+application/x-zerosize=typora.desktop;
