@@ -1,0 +1,29 @@
+[init]
+	defaultBranch = master
+[user]
+	email = kkauannunes@gmail.com
+	name = Kauan Godoy Nunes
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+[pull]
+  rebase = true
+[core]
+  pager = delta
+	excludesFile = /home/kauan/.config/git/ignore
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  navigate = true
+[merge]
+  conflictstyle = diff3
+[diff]
+  colorMoved = default
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
