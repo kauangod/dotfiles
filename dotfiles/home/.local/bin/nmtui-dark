@@ -1,0 +1,3 @@
+#!/bin/sh
+export NEWT_COLORS_FILE="$HOME/.config/newt/colors"
+exec nmtui "$@"
